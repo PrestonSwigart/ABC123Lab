@@ -11,7 +11,7 @@ public class SimpleIOMath {
     private int favNumber;
 
     /**
-     *
+     * prompts user with questions and prints text
      */
     public void promptUser() {
         Scanner in = new Scanner(System.in);
@@ -31,22 +31,21 @@ public class SimpleIOMath {
     }
 
     /**
-     *
+     * prints out info at end of program
      */
     public void printInfo(){
         System.out.println("Your name is: " + name);
         System.out.println("Your age is " + age);
         System.out.println("At your next birthday, you will be " + (age + 1));
-        //System.out.println("The first prime factor of " + age + "is " + Variable);
+        System.out.println("The first prime factor of " + age + " is " + smallestPrimeFactor(age));
         System.out.println("Your favorite number is: " + favNumber);
         System.out.println("Your favorite number squared is: " + favNumber * favNumber);
+        System.out.println("* end of program *");
 
     }
 
     /**
-     *
-     * @param num
-     * @retur
+     * figures out if number is prime
      */
     private boolean isPrime(int num) {
         for(int i = 2; i <= Math.sqrt(num)+1; i++) {
@@ -54,6 +53,19 @@ public class SimpleIOMath {
                 return false;
         }
         return true;
+    }
+
+    /**
+     * finds smallest prime factor
+     */
+    private int smallestPrimeFactor(int num){
+        for(int i = 2; i  <= num; i++){
+            if(isPrime(i)){
+                if(num % i == 0)
+                    return i;
+            }
+        }
+        return num;
     }
 
     /**
