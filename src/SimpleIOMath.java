@@ -56,7 +56,7 @@ public class SimpleIOMath {
     }
 
     /**
-     * finds smallest prime factor
+     * finds the smallest prime factor
      */
     private int smallestPrimeFactor(int num){
         for(int i = 2; i  <= num; i++){
